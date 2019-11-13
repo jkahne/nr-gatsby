@@ -1,8 +1,9 @@
 ---
 title: My Second Post!
-date: "2015-05-06T23:46:37.121Z"
+slug: "not-the-title"
+date: "2015-05-06"
 tags: [ruby]
-slug: not-the-title
+published: true
 ---
 
 Wow! I love blogging so much already.

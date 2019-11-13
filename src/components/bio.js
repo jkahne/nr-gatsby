@@ -15,7 +15,10 @@ const Bio = () => {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
           fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_tracedSVG
+          }
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -38,6 +41,18 @@ const Bio = () => {
       }}
     >
       <Image
+        fluid={data.avatar.childImageSharp.fluid}
+        alt={author}
+        style={{
+          marginBottom: 0,
+          minWidth: 50,
+          borderRadius: `100%`,
+        }}
+        imgStyle={{
+          borderRadius: `50%`,
+        }}
+      />
+      <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
@@ -50,8 +65,8 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
+        Written by <strong>{author}</strong> who lives and works in Cincinnati
+        building useful things.
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
           You should follow him on Twitter

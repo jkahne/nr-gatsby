@@ -64,7 +64,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "eslint": "eslint src/*.js src/**/*.js",
-    "pretty": "prettier --write \"src/**/*.js\""
+    "eslint": "eslint src/*.js src/**/*.js"
   }
 }

@@ -1,4 +1,5 @@
 const path = require(`path`)
+const moment = require(`moment`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -7,17 +8,14 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+        allMarkdownRemark {
           edges {
             node {
               fields {
                 slug
               }
               frontmatter {
-                title
+                slug
               }
             }
           }
@@ -38,7 +36,6 @@ exports.createPages = async ({ graphql, actions }) => {
     const next = index === 0 ? null : posts[index - 1].node
 
     createPage({
-      // path: `blog/${post.node.fields.slug}`,
       path: post.node.fields.slug,
       component: blogPost,
       context: {
@@ -54,7 +51,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    // this looks at the actual file path to make the slug
+    // const value = createFilePath({ node, getNode })
+
+    const m = moment(node.frontmatter.date)
+    const newslug = `${m.format("YYYY")}/${m.format("MM")}/${m.format("DD")}/${
+      node.frontmatter.slug
+    }`
+    const value = `/posts/${newslug}`
     createNodeField({
       name: `slug`,
       node,
