@@ -16,6 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 slug
+                published
               }
             }
           }
@@ -63,6 +64,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+    createNodeField({
+      name: `published`,
+      node,
+      value: node.frontmatter.published,
     })
   }
 }

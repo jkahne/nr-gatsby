@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Nimble River`,
+    title: `Jeremy's Crap`,
     author: `Jeremy Kahne`,
     description: ``,
     siteUrl: `https://sad-goldwasser-171981.netlify.com/`,
@@ -18,22 +18,49 @@ module.exports = {
         // See: https://github.com/isaacs/minimatch
         // The example below will exclude the single `path/to/page` and all routes beginning with `category`
         // exclude: ["/category/*", `/path/to/page`],
+        //
+        // THIS ISN'T WORKING
         query: `
-          {
-            site {
-              siteMetadata {
-                siteUrl
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allMarkdownRemark(filter: {fields: {published: {eq: true}}}) {
+             nodes {
+               fields {
+                 slug
+               }
+             }
+          }
+          allSitePage(filter: {path: {regex: "/^(?!\\/posts)/"}})  {
+            edges {
+              node {
+                path
               }
             }
+          }
+      } `,
+        //      WHAT I WANT:
+        //
+        // {
+        //   posts: allMarkdownRemark(filter: {fields: {published: {eq: true}}}) {
+        //     entries: nodes {
+        //       post: fields {
+        //         path: slug
+        //       }
+        //     }
+        //   }
+        //   pages: allSitePage(filter: {path: {regex: "/^(?!\\/posts)/"}}) {
+        //     entries: edges {
+        //       page: node {
+        //         path
+        //       }
+        //     }
+        //   }
+        // }
 
-            allSitePage {
-              edges {
-                node {
-                  path
-                }
-              }
-            }
-        }`,
         // serialize: ({ site, allSitePage }) =>
         //   allSitePage.edges.map(edge => {
         //     return {
