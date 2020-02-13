@@ -23,35 +23,42 @@ class BlogPostTemplate extends React.Component {
           <p>{post.frontmatter.date}</p>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr style={{}} />
-          <Bio />
         </article>
 
-        <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  {"<-"} {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} {"->"}
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {previous && (
+              <Link
+                to={previous.fields.slug}
+                rel="prev"
+                style={{ textDecoration: "none" }}
+              >
+                {"<-"} {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link
+                to={next.fields.slug}
+                rel="next"
+                style={{ textDecoration: "none" }}
+              >
+                {next.frontmatter.title} {"->"}
+              </Link>
+            )}
+          </li>
+        </ul>
+
+        <Bio />
       </Layout>
     )
   }
