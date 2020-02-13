@@ -5,21 +5,24 @@
 @import "base/typography";
 @import "base/layout";
 
+@import "blocks/bio";
+@import "blocks/blog";
+
 // h1, h2, h3, h4, h5, h6 {
 //   color: $gray-dk;
 // }
 
-:export {
-  fontBody: $font-body;
-  fontHeader: $font-body;
-
-  fontSizeSm: $font-size-sm;
-  fontSizeLg: $font-size-lg;
-
-  spaceXs: $space-xs;
-  spaceSm: $space-sm;
-  space: $space;
-  spaceLg: $space-lg;
-  spaceXl: $space-xl;
-  spaceXxl: $space-xxl;
-}
+// :export {
+//   fontBody: $font-body;
+//   fontHeader: $font-body;
+//
+//   fontSizeSm: $font-size-sm;
+//   fontSizeLg: $font-size-lg;
+//
+//   spaceXs: $space-xs;
+//   spaceSm: $space-sm;
+//   space: $space;
+//   spaceLg: $space-lg;
+//   spaceXl: $space-xl;
+//   spaceXxl: $space-xxl;
+// }

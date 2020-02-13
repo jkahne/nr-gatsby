@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "Jeremy's random thoughts",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "random thoughts",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jeremy Kahne <jkahne@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },

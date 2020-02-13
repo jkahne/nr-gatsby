@@ -3,6 +3,8 @@ title: Hello World
 slug: "whatchu-talkin-bout"
 date: "2015-05-01"
 description: "Hello World"
+published: true
+image: texas-sized-10-4.png
 tags: [sql, til]
 ---
 

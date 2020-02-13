@@ -1,0 +1,26 @@
+.blog-feed {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  align-items: end;
+}
+
+@media screen and (min-width: $screen-mobile) {
+  .blog-feed {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: $page-width) {
+  .blog-feed {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 28px;
+  }
+}
+
+.blog-article {
+  img {
+    width: 100%;
+  }
+}

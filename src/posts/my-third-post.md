@@ -1,6 +1,6 @@
 ---
-title: My Second Post!
-slug: "not-the-title"
+title: My Third Post!
+slug: "not-the-title-again"
 date: "2015-05-06"
 tags: [ruby]
 image: texas-sized-10-4.png
