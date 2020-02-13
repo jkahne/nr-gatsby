@@ -16,7 +16,7 @@ header {
   position: fixed;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 50px;
   top: 0;
   background: #fff;
 }
@@ -27,7 +27,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 2rem;
+  margin: 0px 2rem 10px;
 }
 
 @media screen and (min-width: $page-width) {
@@ -35,7 +35,8 @@ header {
     margin: auto;
   }
   .header-content {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

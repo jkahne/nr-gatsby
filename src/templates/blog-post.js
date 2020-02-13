@@ -18,16 +18,12 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
           tags={post.frontmatter.tags}
         />
-        <article>
-          <header>
-            <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
-          </header>
+        <article className="blog-post">
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr style={{}} />
-          <footer>
-            <Bio />
-          </footer>
+          <Bio />
         </article>
 
         <nav>
