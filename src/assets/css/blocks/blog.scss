@@ -27,3 +27,23 @@
 
 .blog-post {
 }
+
+.blog--page-iterator {
+  display: flex;
+  flex-direction: row;
+  border: 1px dashed red;
+}
+
+.blog--page-iterator--item {
+  background: #eee;
+  color: #000;
+  text-align: center;
+  margin: 5px;
+  padding: 10px;
+  border: 1px dashed blue;
+
+  > a {
+    height: 100%;
+    border: 1px dashed green;
+  }
+}
